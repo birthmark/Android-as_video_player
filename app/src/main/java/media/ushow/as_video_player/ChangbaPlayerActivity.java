@@ -217,7 +217,7 @@ public class ChangbaPlayerActivity extends Activity implements OnSeekBarChangeLi
 				};
 				playerController.setUseMediaCodec(false);
 				int width = getWindowManager().getDefaultDisplay().getWidth();
-				String path = "/mnt/sdcard/a_songstudio/huahua.flv";
+				String path = "/mnt/sdcard/xiaog/001.mp4";
 				playerController.init(path, holder.getSurface(), width, width, new OnInitializedCallback() {
 					public void onInitialized(OnInitialStatus onInitialStatus) {
 						// TODO: do your work here
