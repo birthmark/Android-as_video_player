@@ -1,4 +1,4 @@
-package media.ushow.as_video_player;
+package media.ushow.as_video_player.utils;
 
 import android.Manifest;
 import android.app.ActivityManager;
@@ -9,6 +9,8 @@ import android.content.pm.PackageManager;
 import android.support.annotation.RequiresPermission;
 
 import java.util.List;
+
+import media.ushow.as_video_player.MyApplication;
 
 /**
  * <pre>

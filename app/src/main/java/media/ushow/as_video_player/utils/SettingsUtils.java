@@ -1,4 +1,4 @@
-package media.ushow.as_video_player;
+package media.ushow.as_video_player.utils;
 
 import android.content.ComponentName;
 import android.content.Context;

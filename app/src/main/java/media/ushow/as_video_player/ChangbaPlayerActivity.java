@@ -8,6 +8,7 @@ import com.changba.songstudio.video.player.OnInitializedCallback;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -217,7 +218,8 @@ public class ChangbaPlayerActivity extends Activity implements OnSeekBarChangeLi
 				};
 				playerController.setUseMediaCodec(false);
 				int width = getWindowManager().getDefaultDisplay().getWidth();
-				String path = "/mnt/sdcard/xiaog/001.mp4";
+				String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/xiaog/001.mp4";
+//				String path = "/mnt/sdcard/xiaog/001.mp4";
 				playerController.init(path, holder.getSurface(), width, width, new OnInitializedCallback() {
 					public void onInitialized(OnInitialStatus onInitialStatus) {
 						// TODO: do your work here
