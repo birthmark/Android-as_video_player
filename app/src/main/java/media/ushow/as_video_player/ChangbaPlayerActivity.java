@@ -1,5 +1,6 @@
 package media.ushow.as_video_player;
 
+import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -8,6 +9,7 @@ import com.changba.songstudio.video.player.OnInitializedCallback;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -217,7 +219,14 @@ public class ChangbaPlayerActivity extends Activity implements OnSeekBarChangeLi
 				};
 				playerController.setUseMediaCodec(false);
 				int width = getWindowManager().getDefaultDisplay().getWidth();
-				String path = "/mnt/sdcard/a_songstudio/huahua.flv";
+				String path = Environment.getExternalStorageDirectory()+"/Movies/django.flv";
+
+				File file = new File(path);
+				if (!file.exists()) {
+					Log.i("problem", "file not exist");
+				} else {
+					Log.i("problem", "file exist");
+				}
 				playerController.init(path, holder.getSurface(), width, width, new OnInitializedCallback() {
 					public void onInitialized(OnInitialStatus onInitialStatus) {
 						// TODO: do your work here
