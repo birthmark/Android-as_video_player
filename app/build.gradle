@@ -28,6 +28,21 @@ android {
         }
     }
 
+    signingConfigs {
+        release {
+            keyAlias 'aaa111'
+            keyPassword '111aaa'
+            storeFile file('../key/videoplayer.jks')
+            storePassword '111aaa'
+        }
+
+        debug {
+            keyAlias 'aaa111'
+            keyPassword '111aaa'
+            storeFile file('../key/videoplayer.jks')
+            storePassword '111aaa'
+        }
+    }
 
     buildTypes {
 
