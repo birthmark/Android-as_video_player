@@ -219,7 +219,7 @@ public class ChangbaPlayerActivity extends Activity implements OnSeekBarChangeLi
 				};
 				playerController.setUseMediaCodec(false);
 				int width = getWindowManager().getDefaultDisplay().getWidth();
-				String path = Environment.getExternalStorageDirectory()+"/Movies/django.flv";
+				String path = Environment.getExternalStorageDirectory()+"/Movies/test.mp4";
 
 				File file = new File(path);
 				if (!file.exists()) {
