@@ -36,6 +36,7 @@ void VideoDecoder::initFFMpegContext() {
 	//注册所有支持的文件格式以及编解码器 之后就可以用所有ffmpeg支持的codec了
 	avcodec_register_all();
 	av_register_all();
+
 }
 
 int VideoDecoder::openFile(DecoderRequestHeader *requestHeader) {
@@ -308,8 +309,14 @@ int VideoDecoder::openVideoStream(int streamIndex) {
     }
     LOGI("degress is %d", degress);
 	videoCodecCtx = videoStream->codec;
-	//2、通过codecContext的codec_id 找出对应的decoder
-	videoCodec = avcodec_find_decoder(videoCodecCtx->codec_id);
+	//找硬件解码器
+//	videoCodec = avcodec_find_decoder_by_name("h264_mediacodec");
+//	if (videoCodec == NULL) {
+		//2、通过codecContext的codec_id 找出对应的decoder
+		videoCodec = avcodec_find_decoder(videoCodecCtx->codec_id);
+//	} else {
+//		LOGI("CODEC_ID_H264 is h264_mediacodec");
+//	}
 	LOGI("CODEC_ID_H264 is %d videoCodecCtx->codec_id is %d", AV_CODEC_ID_H264, videoCodecCtx->codec_id);
 	if (videoCodec == NULL) {
 		LOGI("can not find the videoStream's Codec ...");
